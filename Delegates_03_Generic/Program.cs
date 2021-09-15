@@ -67,7 +67,8 @@ namespace Delegates_03_Generic
             doubleTransform = Square;
             Console.WriteLine("Quadrat von 4 = " + doubleTransform(12.5));
 
-            double y = UseDelegate(Double, 12.5);
+            //Das <double> muss nicht angegeben werden, es wird sowohl entgegengenommen als auch zurückgegeben
+            double y = UseDelegate<double>(Double, 12.5);
             Console.WriteLine("Das doppelte von 12.5 = " + y);
 
             y = UseDelegate(Square, 12.5);
