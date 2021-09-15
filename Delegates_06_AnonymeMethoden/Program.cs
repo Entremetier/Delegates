@@ -32,10 +32,55 @@ using System.Threading.Tasks;
 
 namespace Delegates_06_AnonymeMethoden
 {
+    //Delegate-Typ mit einem int-Parameter und keinem Rückgabewert
+    delegate void PrintSequence(int value);
+
+    //Delegate-Typ mit einem int-Parameter und einem Rückgabewert int
+    delegate int PrintSequence2(int value);
     class Program
     {
         static void Main(string[] args)
         {
+            //Eine Delegate-Instanz mit einer anonymen Methode, die die Zahlen von 0 bis zu einem bestimmten Endwert ausgibt.
+            PrintSequence printSequence = delegate (int endVal)
+            {
+                for (int i = 0; i <= endVal; i++)
+                {
+                    Console.Write(i + " ");
+                }
+                Console.WriteLine("\n");
+            };
+
+            //Ausführen der anonymen Methode durch aufrufen des Delegate
+            printSequence(20);
+            printSequence(5);
+
+
+            //Anonyme Methode mit Rückgabewert
+            //--------------------------------------------------------------------
+
+            //Eine Delegate-Instanz mit einer anonymen Methode, die die Zahlen von 0 bis zu einem bestimmten Endwert ausgibt.
+            PrintSequence2 printSequence2 = delegate(int endVal)
+            {
+                int sum = 0;
+
+                for (int i = 0; i <= endVal; i++)
+                {
+                    Console.Write(i + " ");
+                    sum += i;
+                }
+                Console.WriteLine("\n");
+                return sum;
+            };
+
+            int result = printSequence2(3);
+            Console.WriteLine("Summe = " + result);
+            Console.WriteLine();
+
+            result = printSequence2(6);
+            Console.WriteLine("Summe = " + result);
+
+            Console.ReadKey();
         }
     }
 }

@@ -15,6 +15,7 @@ using System.Threading.Tasks;
  * Predicate<T> stellt einen generischen Delegate-Typ für Methoden dar, die prüfen, ob
  * verschiedene Kriterien für das angegebene Objekt vom Typ T erfüllt sind oder nicht.
  * Sind die Kriterien erfüllt, wird true andernfalls false zurückgeliefert.
+ * Predicate nimmt nur einen Wert entgegen und gibt einen bool zurück
  */
 
 namespace Delegates_05_Predicate
