@@ -41,6 +41,7 @@ namespace Delegates_05_Predicate
             //Console.WriteLine($"Der Check {checkMethode.Method.Name} (\"{text}\") liefert {checkResult}");
 
             return checkResult;
+
         }
 
         static void Main(string[] args)
